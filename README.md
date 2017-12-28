@@ -43,3 +43,6 @@ A slider which can tracking current value.
     [self.view addSubview:slider];
     
 ```
+### a image may help you
+![image](https://github.com/xjh093/JHSlider/blob/master/JHSlider.png)
+
