@@ -113,6 +113,7 @@
         if (maxX >= CGRectGetWidth(self.bounds) && _maxFlag == NO) {
             _maxFlag = YES;
             
+            _trackingLabel.center = CGPointMake(CGRectGetMidX(thumbRect) + _trackingLabelOffsetX, thumbRect.origin.y - _trackingLabel.frame.size.height*0.5 - _trackingLabelOffsetY);
             CGRect trackingLabelFrame = _trackingLabel.frame;
             trackingLabelFrame.origin.x = CGRectGetWidth(self.bounds) - CGRectGetWidth(trackingLabelFrame);
             _trackingLabel.frame = trackingLabelFrame;
@@ -121,6 +122,7 @@
         else if (minX <= 0 && _minFlag == NO) {
             _minFlag = YES;
             
+            _trackingLabel.center = CGPointMake(CGRectGetMidX(thumbRect) + _trackingLabelOffsetX, thumbRect.origin.y - _trackingLabel.frame.size.height*0.5 - _trackingLabelOffsetY);
             CGRect trackingLabelFrame = _trackingLabel.frame;
             trackingLabelFrame.origin.x = 0;
             _trackingLabel.frame = trackingLabelFrame;
@@ -145,21 +147,23 @@
         if (maxX >= CGRectGetWidth(self.bounds) && _maxFlag == NO) {
             _maxFlag = YES;
             
+            _trackingBackgroundView.center = CGPointMake(CGRectGetMidX(thumbRect) + _trackingBackgroundViewOffsetX, thumbRect.origin.y - _trackingBackgroundView.frame.size.height*0.5 - _trackingBackgroundViewOffsetY);
             CGRect trackingBackgroundViewFrame = _trackingBackgroundView.frame;
             trackingBackgroundViewFrame.origin.x = CGRectGetWidth(self.bounds) - CGRectGetWidth(trackingBackgroundViewFrame);
             _trackingBackgroundView.frame = trackingBackgroundViewFrame;
             
-            _trackingLabel.center = CGPointMake(_trackingBackgroundView.center.x + _trackingLabelOffsetX, CGRectGetMidY(_trackingLabel.frame));
+            _trackingLabel.center = CGPointMake(_trackingBackgroundView.center.x + _trackingLabelOffsetX, thumbRect.origin.y - _trackingLabel.frame.size.height*0.5 - _trackingLabelOffsetY);
             
         }
         else if (minX <= 0 && _minFlag == NO) {
             _minFlag = YES;
             
+            _trackingBackgroundView.center = CGPointMake(CGRectGetMidX(thumbRect) + _trackingBackgroundViewOffsetX, thumbRect.origin.y - _trackingBackgroundView.frame.size.height*0.5 - _trackingBackgroundViewOffsetY);
             CGRect trackingBackgroundViewFrame = _trackingBackgroundView.frame;
             trackingBackgroundViewFrame.origin.x = 0;
             _trackingBackgroundView.frame = trackingBackgroundViewFrame;
             
-            _trackingLabel.center = CGPointMake(_trackingBackgroundView.center.x + _trackingLabelOffsetX, CGRectGetMidY(_trackingLabel.frame));
+            _trackingLabel.center = CGPointMake(_trackingBackgroundView.center.x + _trackingLabelOffsetX, thumbRect.origin.y - _trackingLabel.frame.size.height*0.5 - _trackingLabelOffsetY);
             
         }else if (maxX < CGRectGetWidth(self.bounds) && minX > 0){
             _maxFlag = _minFlag = NO;
